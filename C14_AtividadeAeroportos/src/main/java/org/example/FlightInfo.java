@@ -3,16 +3,16 @@ package org.example;
 public class FlightInfo {
     private int flightId;
     private String flightName;
-    private String airlineName;
+    private Airline airline;
     private String capacity;
     private double duration;
     private double price;
     private double distance;
 
-    public FlightInfo(int flightId, String flightName, String airlineName, String capacity, double duration, double price, double distance) {
+    public FlightInfo(int flightId, String flightName, Airline airline, String capacity, double duration, double price, double distance) {
         this.flightId = flightId;
         this.flightName = flightName;
-        this.airlineName = airlineName;
+        this.airline = airline;
         this.capacity = capacity;
         this.duration = duration;
         this.price = price;
