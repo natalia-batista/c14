@@ -10,7 +10,7 @@ public class Main {
         Airport a2 = new Airport("CGH","Sao Paulo","Brasil",-23.626667,-46.657778,0.064579);
         Airport a3 = new Airport("Viracopos","Campinas","Brasil",-23.626667,-46.657778,0.064579);
         FlightInfo f12 = new FlightInfo(0,"Guarulhos-Congonhas", 35.6);
-        FlightInfo f13 = new FlightInfo(1,"Guarulhos-Viracopos", 35.6);
+        FlightInfo f13 = new FlightInfo(1,"Guarulhos-Viracopos", 60);
         graph.addNode(a1);
         graph.putEdgeValue(a1,a2,f12);
         graph.putEdgeValue(a1,a3,f13);
