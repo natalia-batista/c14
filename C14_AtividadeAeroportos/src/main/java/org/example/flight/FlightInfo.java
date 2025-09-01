@@ -1,4 +1,6 @@
-package org.example;
+package org.example.flight;
+
+import org.example.airline.Airline;
 
 public class FlightInfo {
     private int flightId;
@@ -46,6 +48,19 @@ public class FlightInfo {
 
     public boolean isCheaperThan(FlightInfo other) {
         return this.price < other.price;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public boolean canBuyTicket() {
+        if (capacity > 0) {
+            capacity--;
+            return true; // sucesso
+        } else {
+            return false; // sem assentos
+        }
     }
 
 }

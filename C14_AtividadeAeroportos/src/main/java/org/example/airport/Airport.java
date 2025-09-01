@@ -1,4 +1,4 @@
-package org.example;
+package org.example.airport;
 
 public class Airport {
     private String name;

@@ -1,5 +1,7 @@
 package org.example;
 import com.google.common.graph.*;
+import org.example.airport.Airport;
+import org.example.flight.FlightInfo;
 
 //https://github.com/google/guava/wiki/GraphsExplained#definitions.
 //https://www.geeksforgeeks.org/software-engineering/class-diagram-for-airport-management-system/
