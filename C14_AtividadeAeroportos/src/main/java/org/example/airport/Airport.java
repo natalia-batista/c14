@@ -33,4 +33,11 @@ public class Airport {
         return this.country.equals(otherAirport.country);
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
 }

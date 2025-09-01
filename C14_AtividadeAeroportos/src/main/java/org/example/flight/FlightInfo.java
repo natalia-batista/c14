@@ -32,35 +32,50 @@ public class FlightInfo {
                 ",\n capacity=" + capacity + ",\n duration=" + duration + ",\n price=" + price + ",\n distance=" + distance + "]";
     }
 
-    public double pricePerKm() {
+    public double pricePerKm() throws RuntimeException {
         if (this.distance > 0){
             return this.price / this.distance;
         }
-        return 0;
+        throw new RuntimeException("Distance is negative"); //CRIAR UMA EXCEPTION
     }
 
-    public double averageSpeed() {
+    public double averageSpeed() throws RuntimeException {
         if (this.duration > 0){
             return this.distance / this.duration;
         }
-        return 0;
+        throw new RuntimeException("Distance is negative"); //CRIAR UMA EXCEPTION
     }
 
     public boolean isCheaperThan(FlightInfo other) {
         return this.price < other.price;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
     public boolean canBuyTicket() {
-        if (capacity > 0) {
-            capacity--;
+        if (this.capacity > 0) {
+            this.capacity--;
             return true; // sucesso
         } else {
             return false; // sem assentos
         }
     }
 
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public double getDuration() {
+        return duration;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
 }

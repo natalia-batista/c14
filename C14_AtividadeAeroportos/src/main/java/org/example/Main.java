@@ -25,7 +25,8 @@ public class Main {
         graph.addNode(a4);
         graph.addNode(a5);
         graph.putEdgeValue(a1,a2,f15);
-        graph.putEdgeValue(a1,a3,f23);
+        graph.putEdgeValue(a2,a3,f23);
+        graph.putEdgeValue(a1,a4,f14);
 
         System.out.println("Airports: " + graph.nodes());
         System.out.println("Flights from GRU: " + graph.successors(a1));
