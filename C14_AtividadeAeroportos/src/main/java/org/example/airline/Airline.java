@@ -1,4 +1,4 @@
-package org.example;
+package org.example.airline;
 
 public class Airline {
     String name;
