@@ -5,6 +5,7 @@ import com.google.common.graph.*;
 //https://www.geeksforgeeks.org/software-engineering/class-diagram-for-airport-management-system/
 public class Main {
     public static void main(String[] args) {
+
         MutableValueGraph<Airport, FlightInfo> graph = ValueGraphBuilder.undirected().allowsSelfLoops(true).build();
         Airport a1 = new Airport("GRU","Guarulhos","Brasil",-23.4325,-46.4694,14.5);
         Airport a2 = new Airport("CGH","Sao Paulo","Brasil",-23.626667,-46.657778,0.064579);
