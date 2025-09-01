@@ -27,13 +27,13 @@ public class Passenger {
     public boolean buyTicket() {
         boolean ticketAvailable = this.flightInfo.canBuyTicket();
         if (ticketAvailable) {
-            int ticketNb = ticketNumber.nextInt((flightInfo.getCapacity() - 0) + 1);
+            int ticketNb = ticketNumber.nextInt((flightInfo.getCapacity()) + 1);
             this.printTicket(ticketNb);
             return true;
         }
         return false;
     }
-    
+
     public void printTicket(int ticketNb) {
         System.out.println("Ticket available");
         System.out.println("---------------------------------------------------------");
