@@ -22,4 +22,15 @@ public class Airport {
         return "\nAirport [name=" + name + ",\n city=" + city + ",\n country="
                 + country + ",\n latitude=" + latitude + ",\n longitude=" + longitude + ",\n area=" + area + "]\n";
     }
+
+    public double distanceTo(Airport otherAirport) {
+        double x = this.latitude - otherAirport.latitude;
+        double y = this.longitude - otherAirport.longitude;
+        return Math.sqrt(x * x + y * y);
+    }
+
+    public Boolean isSameCountry(Airport otherAirport) {
+        return this.country.equals(otherAirport.country);
+    }
+
 }
