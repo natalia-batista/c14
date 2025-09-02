@@ -36,8 +36,10 @@ public class FlightInfo {
         if (this.distance > 0){
             return this.price / this.distance;
         }
-        throw new RuntimeException("Distance is negative"); //CRIAR UMA EXCEPTION
+        throw new RuntimeException("Distance is negative");
     }
+
+
 
     public double averageSpeed() throws RuntimeException {
         if (this.duration > 0){

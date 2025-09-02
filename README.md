@@ -5,3 +5,14 @@ O código foi desenvolvido em colaboração com a aline-dos-santos. Criamos um c
 Para resolvê-lo, fiz um git pull para o meu repo local, seguido de um git merge origin/novoAeroporto. Após o conflito ser apontado, abri o código no vscode e segui as instruções de correção, mantendo apenas a linha de código alterada na branch novoAeroporto. Segui as instruções do próprio vscode para commitar e mandar o código para o repositório central.
 
 Também adicionei as classes Airline e Passenger, usando outras branchs (airline e passenger)
+
+Histórico de Erros / Regressões
+
+Regressão em FlightInfo.pricePerKm()
+Erro introduzido: Removida a verificação de distância positiva.
+Testes que falharam: testPricePerkm2
+
+Correção aplicada: Restaurada verificação de `distance > 0` e lançamento de exceção para valores inválidos.
+Resultado: O teste passou novamente.
+
+
