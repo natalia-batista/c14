@@ -4,4 +4,4 @@ Código desenvolvido para as primeiras atividades de Engenharia de Software, con
 O código foi desenvolvido em colaboração com a aline-dos-santos. Criamos um conflito propositalmente, alterando a mesma linha de código (configuração da distância entre os dois aeroportos). Ao tentar realizar o merge da branch novoAeroporto foi apontado um conflito de merge.
 Para resolvê-lo, fiz um git pull para o meu repo local, seguido de um git merge origin/novoAeroporto. Após o conflito ser apontado, abri o código no vscode e segui as instruções de correção, mantendo apenas a linha de código alterada na branch novoAeroporto. Segui as instruções do próprio vscode para commitar e mandar o código para o repositório central.
 
-Também adicionei as classes Airline e Passenger, usando outras branchs (airline e passengers)
+Também adicionei as classes Airline e Passenger, usando outras branchs (airline e passenger)
