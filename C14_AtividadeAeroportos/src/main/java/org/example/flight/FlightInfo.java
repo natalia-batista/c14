@@ -33,9 +33,12 @@ public class FlightInfo {
     }
 
     public double pricePerKm() throws RuntimeException {
-        // Removendo a verificação de distance > 0
-        return this.price / this.distance;
+        if (this.distance > 0){
+            return this.price / this.distance;
+        }
+        throw new RuntimeException("Distance is negative");
     }
+
 
 
     public double averageSpeed() throws RuntimeException {
