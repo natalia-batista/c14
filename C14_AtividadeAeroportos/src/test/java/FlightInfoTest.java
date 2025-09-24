@@ -15,15 +15,15 @@ public class FlightInfoTest {
         double expPrice = f15.pricePerKm();
         assertEquals(price,expPrice,0.001);
     }
-    @Test
-    public void testPricePerkm2(){
+    @Test(expected = RuntimeException.class)
+    public void testPricePerkmIsZero(){
         Airport a1 = new Airport("GRU","Guarulhos","Brasil",-23.4325,-46.4694,14.5);
         Airport a2 = new Airport("GRU","Guarulhos","Brasil",-23.4325,-46.4694,14.5);
         FlightInfo f11 = new FlightInfo(0,"GRU-GRU",0,0,0,a1.distanceTo(a1)," "," ");
-        assertEquals(0,f11.pricePerKm(),0.001);
+        f11.pricePerKm();
     }
     @Test(expected = RuntimeException.class)
-    public void testPricePerkm3 (){
+    public void testPricePerkmIsNegative (){
         FlightInfo f15 = new FlightInfo(0,"GRU-MAD",300,12,5000,-10,"LATAM Airlines","LATAM");
         f15.pricePerKm();
     }
@@ -78,6 +78,18 @@ public class FlightInfoTest {
         FlightInfo f12 = new FlightInfo(0,"GRU-MAD",300,12,5000,1000,"LATAM Airlines","LATAM");
         f12.setCapacity(0);
         assertFalse(f12.canBuyTicket());
+    }
+    @Test
+    public void testCanBuyLastTicket(){
+        FlightInfo f12 = new FlightInfo(0,"GRU-MAD",300,12,5000,1000,"LATAM Airlines","LATAM");
+        f12.setCapacity(1);
+        assertTrue(f12.canBuyTicket());
+    }
+    @Test
+    public void testAverageRevenue(){
+        FlightInfo f12 = new FlightInfo(0,"GRU-MAD",30,12,1000,1000,"LATAM Airlines","LATAM");
+        double revenue = f12.averageRevenue();
+        assertEquals(revenue,30000,0.001);
     }
 
 }

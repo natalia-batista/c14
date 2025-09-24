@@ -2,6 +2,9 @@ package org.example.flight;
 
 import org.example.airline.Airline;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FlightInfo {
     private int flightId;
     private String flightName;
@@ -36,9 +39,8 @@ public class FlightInfo {
         if (this.distance > 0){
             return this.price / this.distance;
         }
-        throw new RuntimeException("Distance is negative");
+        throw new RuntimeException("Distance is negative or zero");
     }
-
 
 
     public double averageSpeed() throws RuntimeException {
@@ -59,6 +61,13 @@ public class FlightInfo {
         } else {
             return false; // sem assentos
         }
+    }
+    public double averageRevenue() {
+        return price * capacity;
+    }
+
+    public boolean isSoldOut() {
+        return capacity <= 0;
     }
 
     public void setCapacity(int capacity) {

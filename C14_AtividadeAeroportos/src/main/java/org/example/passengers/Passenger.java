@@ -1,14 +1,15 @@
 package org.example.passengers;
 
+import org.example.WebBanking.WebBanking;
 import org.example.flight.FlightInfo;
 
 import java.util.Random;
 
 public class Passenger {
-    int passengerId;
+    private int passengerId;
     String passengerName;
-    int passengerAge;
-    Random ticketNumber = new Random();
+    private int passengerAge;
+    private Random ticketNumber = new Random();
     FlightInfo flightInfo;
 
     public Passenger(int passengerId, String passengerName, int passengerAge, FlightInfo flightInfo) {
@@ -23,10 +24,17 @@ public class Passenger {
         return "\nPassenger [name=" + passengerName + ",\n id=" + passengerId + ",\n age="
                 + passengerAge;
     }
+    private boolean payment(WebBanking payment, double price){
+        if(payment.getBalance() - price >= 0){
+            return true;
+        }
+        return false;
+    }
 
-    public boolean buyTicket() {
+    public boolean buyTicket(WebBanking payment) {
         boolean ticketAvailable = this.flightInfo.canBuyTicket();
-        if (ticketAvailable) {
+        boolean cash = this.payment(payment, this.flightInfo.getPrice());
+        if (ticketAvailable && cash) {
             int ticketNb = ticketNumber.nextInt((flightInfo.getCapacity()) + 1);
             this.printTicket(ticketNb);
             return true;
@@ -34,7 +42,7 @@ public class Passenger {
         return false;
     }
 
-    public void printTicket(int ticketNb) {
+    private void printTicket(int ticketNb) {
         System.out.println("Ticket available");
         System.out.println("---------------------------------------------------------");
         System.out.println(this.flightInfo.toString());
