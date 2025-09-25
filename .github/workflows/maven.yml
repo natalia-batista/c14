@@ -73,7 +73,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Checking env variable
-    - run: echo "EMAIL_PIPELINE = $EMAIL_PIPELINE"
+      run: echo "EMAIL_PIPELINE = $EMAIL_PIPELINE"
     - name: Notification (reading env variable)
       run: |
         chmod +x scripts/sendEmail.sh
