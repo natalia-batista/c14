@@ -73,8 +73,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Checking env variable
+      env:
+        EMAIL_PIPELINE: ${{ vars.EMAIL_PIPELINE }} 
       run: echo "EMAIL_PIPELINE = $EMAIL_PIPELINE"
     - name: Notification (reading env variable)
+      env:
+        EMAIL_PIPELINE: ${{ vars.EMAIL_PIPELINE }} 
       run: |
         chmod +x scripts/sendEmail.sh
         sh scripts/sendEmail.sh
