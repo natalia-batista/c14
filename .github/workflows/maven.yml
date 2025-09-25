@@ -8,6 +8,7 @@
 
 name: Java CI with Maven
 
+
 on:
   workflow_dispatch:
   push:
@@ -41,7 +42,6 @@ jobs:
 
 
   test:
-    needs: build
     
     runs-on: ubuntu-latest
 
