@@ -14,6 +14,7 @@ Também adicionei as classes Airline e Passenger, usando outras branchs (airline
 ### Histórico de Erros / Regressões
 
 Regressão em FlightInfo.pricePerKm()
+
 Erro introduzido: Removida a verificação de distância positiva.
 Testes que falharam: testPricePerkm2
 
@@ -21,3 +22,9 @@ Correção aplicada: Restaurada verificação de `distance > 0` e lançamento de
 Resultado: O teste passou novamente.
 
 
+## Terceira atividade
+Criação de 20 testes unitários/mock
+
+## Quarta atividade
+Criação de um pipeline usando Github Actions.
+O pipeline é formado por 3 jobs: build, test e notificação, sendo que os dois primeiros rodam em paralelo.
